@@ -267,16 +267,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* Hero Right */
 .hero-right { display: flex; justify-content: center; align-items: center; }
 
-.hero-photo-wrap { position: relative; width: 100%; max-width: 360px; }
+.hero-photo-wrap { position: relative; width: 100%; max-width: 440px; }
 
-.hero-photo-backdrop {
-  position: absolute;
-  top: 14px; left: 14px; right: -14px; bottom: -14px;
-  background: linear-gradient(145deg, rgba(220,155,25,.35) 0%, rgba(196,113,79,.3) 100%);
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(220,155,25,.2);
-  pointer-events: none;
-}
+.hero-photo-backdrop { display: none; }
 
 .hero-photo-frame {
   width: 100%; aspect-ratio: 1 / 1;
