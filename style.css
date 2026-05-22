@@ -87,8 +87,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex; align-items: center; justify-content: space-between;
 }
 
-.logo { display: flex; align-items: center; }
+.logo { display: flex; align-items: center; gap: .5rem; }
 .logo-symbol { display: none; }
+.logo-icon {
+  height: 36px; width: auto; display: block;
+  border-radius: 5px; flex-shrink: 0;
+}
 .logo-text {
   font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700;
   color: var(--cream); letter-spacing: .02em;
