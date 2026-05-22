@@ -214,24 +214,26 @@
       font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700;
       color: var(--maroon); margin-bottom: 1.5rem;
     }
-    .class-learn-list {
-      list-style: none; display: flex; flex-direction: column; gap: 1rem;
-      counter-reset: learn-counter;
+    .class-learn-table { display: flex; flex-direction: column; gap: .9rem; margin-top: 1.25rem; }
+    .clt-row {
+      display: grid; grid-template-columns: 32px 150px 1fr;
+      gap: .6rem 1rem; align-items: start;
     }
-    .class-learn-list li {
-      display: flex; gap: 1rem; align-items: flex-start;
-      font-size: .92rem; color: var(--text-mid); line-height: 1.7;
-      counter-increment: learn-counter;
-    }
-    .class-learn-list li::before {
-      content: counter(learn-counter);
-      min-width: 28px; height: 28px; flex-shrink: 0;
+    .clt-num {
+      width: 30px; height: 30px;
       background: var(--maroon); border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       font-family: var(--font-heading); font-size: .72rem; font-weight: 700;
-      color: var(--cream); margin-top: .1rem;
+      color: var(--cream); flex-shrink: 0; margin-top: .1rem;
     }
-    .class-learn-list li strong { display: block; color: var(--maroon); margin-bottom: .2rem; }
+    .clt-title {
+      font-family: var(--font-heading); font-size: .88rem; font-weight: 600;
+      color: var(--maroon); padding-top: .3rem; line-height: 1.4;
+    }
+    .clt-desc {
+      font-size: .875rem; color: var(--text-mid); line-height: 1.6;
+      padding-top: .3rem;
+    }
 
     .class-info-box {
       background: var(--maroon); border-radius: var(--radius-lg);
@@ -399,13 +401,33 @@
         <div class="class-learn-wrap reveal">
           <p class="section-eyebrow">Step by Step</p>
           <h3 class="class-subheading">What You Will Learn</h3>
-          <ol class="class-learn-list">
-            <li><strong>Preparing the batter</strong>The right consistency for a thin, even crepe that holds its shape on the pan</li>
-            <li><strong>Mixing the filling</strong>How to combine and season minced meat with fresh aromatics the traditional way</li>
-            <li><strong>Seasoning secrets</strong>Using timur, cumin, turmeric, and chili in the right balance for authentic Newari flavour</li>
-            <li><strong>Cooking technique</strong>Spreading the crepe, layering the topping, and timing the cook so everything comes together</li>
-            <li><strong>Serving style</strong>How Chatamari is traditionally presented and what it is paired with at Newari gatherings</li>
-          </ol>
+          <div class="class-learn-table">
+            <div class="clt-row">
+              <span class="clt-num">1</span>
+              <strong class="clt-title">Preparing the batter</strong>
+              <span class="clt-desc">The right consistency for a thin, even crepe that holds its shape on the pan</span>
+            </div>
+            <div class="clt-row">
+              <span class="clt-num">2</span>
+              <strong class="clt-title">Mixing the filling</strong>
+              <span class="clt-desc">How to combine and season minced meat with fresh aromatics the traditional way</span>
+            </div>
+            <div class="clt-row">
+              <span class="clt-num">3</span>
+              <strong class="clt-title">Seasoning secrets</strong>
+              <span class="clt-desc">Using timur, cumin, turmeric, and chili in the right balance for authentic Newari flavour</span>
+            </div>
+            <div class="clt-row">
+              <span class="clt-num">4</span>
+              <strong class="clt-title">Cooking technique</strong>
+              <span class="clt-desc">Spreading the crepe, layering the topping, and timing the cook so everything comes together</span>
+            </div>
+            <div class="clt-row">
+              <span class="clt-num">5</span>
+              <strong class="clt-title">Serving style</strong>
+              <span class="clt-desc">How Chatamari is traditionally presented and what it is paired with at Newari gatherings</span>
+            </div>
+          </div>
         </div>
 
         <div class="class-info-box reveal">
@@ -413,8 +435,7 @@
           <h3 class="class-subheading" style="color:var(--cream);">Everything You Need to Know</h3>
           <ul class="class-info-list">
             <li><i class="fa-solid fa-clock"></i><div><strong>Duration</strong><span>Approximately 2 hours</span></div></li>
-            <li><i class="fa-solid fa-location-dot"></i><div><strong>Location</strong><span>Yana Kitchen, Panauti-Namobuddha Rd, Panauti</span></div></li>
-            <li><i class="fa-solid fa-signal"></i><div><strong>Skill Level</strong><span>Beginner friendly — no experience needed</span></div></li>
+            <li><i class="fa-solid fa-signal"></i><div><strong>Skill Level</strong><span>Beginner friendly, no experience needed</span></div></li>
             <li><i class="fa-solid fa-language"></i><div><strong>Language</strong><span>Classes taught in English</span></div></li>
             <li><i class="fa-solid fa-circle-check"></i><div><strong>Included</strong><span>All ingredients, recipe card to take home, shared meal, Nepali tea</span></div></li>
           </ul>
