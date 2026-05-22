@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn to cook Chatamari — the Newari pizza — at Yana Kitchen in Panauti, Nepal. A hands-on cooking class experience." />
+  <title>Chatamari | Yana Kitchen Cooking Class</title>
+
+  <link rel="icon" type="image/png" href="yaana.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── Dish Hero ───────────────────────────────── */
+    .dish-hero {
+      background: var(--maroon-dark);
+      padding: 8rem 0 5rem;
+    }
+    .dish-hero-inner {
+      max-width: 1180px; margin: 0 auto; padding: 0 1.5rem;
+      display: grid; grid-template-columns: 1fr 400px;
+      gap: 4rem; align-items: center;
+    }
+    .dish-back-link {
+      display: inline-flex; align-items: center; gap: .45rem;
+      font-size: .75rem; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; color: rgba(255,248,237,.55);
+      margin-bottom: 1.5rem; transition: color .25s ease;
+    }
+    .dish-back-link:hover { color: var(--cream); }
+    .dish-back-link i { font-size: .65rem; }
+
+    .dish-category-tag {
+      display: inline-block; font-size: .72rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: rgba(220,175,60,.9); margin-bottom: .65rem;
+    }
+    .dish-hero-title {
+      font-family: var(--font-heading); font-weight: 700;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      color: var(--cream); line-height: 1.05; margin-bottom: 1rem;
+    }
+    .dish-hero-desc {
+      font-size: 1.05rem; color: rgba(245,236,215,.82);
+      max-width: 460px; line-height: 1.8; margin-bottom: 2rem;
+    }
+    .dish-meta-row { display: flex; flex-wrap: wrap; gap: 2rem; }
+    .dish-meta-item { display: flex; flex-direction: column; gap: .2rem; }
+    .dish-meta-item .meta-label {
+      font-size: .65rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: rgba(220,175,60,.65);
+    }
+    .dish-meta-item .meta-value {
+      font-size: .92rem; color: var(--cream); font-weight: 500;
+      font-family: var(--font-heading);
+    }
+
+    .dish-hero-img {
+      width: 100%; aspect-ratio: 1/1;
+      background: linear-gradient(155deg, #5C2A18 0%, #8B3A1A 50%, #6B4226 100%);
+      border-radius: var(--radius-lg);
+      border: 3px solid rgba(220,175,60,.25);
+      box-shadow: 0 24px 60px rgba(0,0,0,.4);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: .75rem;
+    }
+    .dish-hero-img i { font-size: 5rem; color: var(--cream); opacity: .2; }
+    .dish-hero-img p {
+      font-family: var(--font-heading); color: var(--cream);
+      opacity: .4; font-size: .9rem; letter-spacing: .06em;
+    }
+
+    /* ── Info Strip ──────────────────────────────── */
+    .dish-info-bar {
+      background: var(--beige); border-bottom: 1px solid var(--beige-mid);
+      padding: 1.5rem 0;
+    }
+    .dish-info-bar-inner {
+      max-width: 1180px; margin: 0 auto; padding: 0 1.5rem;
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      align-items: center; justify-content: center;
+    }
+    .dish-info-card {
+      display: flex; align-items: center; gap: .7rem;
+      padding: .6rem 1.2rem;
+      background: var(--cream); border: 1px solid var(--beige-mid);
+      border-radius: var(--radius-sm); box-shadow: var(--shadow-sm);
+    }
+    .dish-info-card i { font-size: .95rem; color: var(--maroon); }
+    .dish-info-card div { display: flex; flex-direction: column; }
+    .dish-info-card .ic-label {
+      font-size: .62rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--text-light);
+    }
+    .dish-info-card .ic-value {
+      font-size: .88rem; font-weight: 600; color: var(--text-dark);
+      font-family: var(--font-heading);
+    }
+
+    /* ── Story + Learn ───────────────────────────── */
+    .dish-story-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: start;
+    }
+    .dish-story-text p { color: var(--text-mid); font-size: 1rem; line-height: 1.8; margin-bottom: 1rem; }
+
+    .dish-learn-box {
+      background: var(--maroon); border-radius: var(--radius-lg);
+      padding: 2.25rem;
+    }
+    .dish-learn-box .section-eyebrow { color: rgba(220,175,60,.8); }
+    .dish-learn-box .section-heading { color: var(--cream); }
+    .dish-learn-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.25rem; }
+    .dish-learn-item { display: flex; align-items: flex-start; gap: .9rem; }
+    .dish-learn-num {
+      width: 28px; height: 28px; flex-shrink: 0;
+      background: rgba(255,248,237,.12); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .72rem; font-weight: 700;
+      color: rgba(220,175,60,.9); font-family: var(--font-heading);
+    }
+    .dish-learn-item p {
+      font-size: .9rem; color: rgba(245,236,215,.85);
+      line-height: 1.65; margin: 0; padding-top: .3rem;
+    }
+
+    /* ── Ingredients ─────────────────────────────── */
+    .dish-ingredients { background: var(--beige); }
+    .ingredients-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: .75rem; margin-top: 2.5rem;
+    }
+    .ingredient-item {
+      display: flex; align-items: center; gap: .75rem;
+      background: var(--cream); border: 1px solid var(--beige-mid);
+      border-radius: var(--radius-sm); padding: .75rem 1rem;
+      font-size: .9rem; color: var(--text-mid);
+    }
+    .ingredient-item i { font-size: .45rem; color: var(--terracotta); flex-shrink: 0; }
+    .ingredient-amount {
+      font-weight: 600; color: var(--maroon);
+      margin-right: .3rem; font-family: var(--font-heading);
+    }
+
+    /* ── Steps ───────────────────────────────────── */
+    .dish-steps { background: var(--cream); }
+    .steps-list {
+      display: flex; flex-direction: column; gap: 1.75rem;
+      margin-top: 2.5rem; max-width: 760px;
+      margin-left: auto; margin-right: auto;
+    }
+    .step-item { display: flex; gap: 1.5rem; align-items: flex-start; }
+    .step-num {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: var(--maroon); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-heading); font-size: 1rem;
+      font-weight: 700; color: var(--cream);
+    }
+    .step-body { padding-top: .35rem; }
+    .step-body strong {
+      display: block; font-family: var(--font-heading);
+      font-size: 1rem; font-weight: 600; color: var(--maroon); margin-bottom: .4rem;
+    }
+    .step-body p { font-size: .95rem; color: var(--text-mid); line-height: 1.8; margin: 0; }
+
+    /* ── CTA Banner ──────────────────────────────── */
+    .dish-cta { background: var(--maroon-dark); padding: 5.5rem 0; text-align: center; }
+    .dish-cta-inner { max-width: 600px; margin: 0 auto; padding: 0 1.5rem; }
+    .dish-cta .section-eyebrow { color: rgba(220,175,60,.8); }
+    .dish-cta .section-heading { color: var(--cream); }
+    .dish-cta p { color: rgba(245,236,215,.8); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; }
+    .dish-cta-price {
+      display: inline-block; font-family: var(--font-heading);
+      font-size: 1.1rem; font-weight: 700;
+      color: rgba(220,175,60,.95); margin-bottom: 2rem;
+    }
+
+    /* ── Responsive ──────────────────────────────── */
+    @media (max-width: 900px) {
+      .dish-hero-inner { grid-template-columns: 1fr; }
+      .dish-hero-img   { display: none; }
+      .dish-story-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+    @media (max-width: 480px) {
+      .dish-hero { padding: 7rem 0 3.5rem; }
+      .dish-meta-row { gap: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Yana Kitchen Home">
+        <span class="logo-symbol">&#x2638;</span>
+        <span class="logo-text">Yana Kitchen</span>
+      </a>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html"             class="nav-link">Home</a></li>
+          <li><a href="index.html#story"       class="nav-link">Our Story</a></li>
+          <li><a href="index.html#menu"        class="nav-link">Menu</a></li>
+          <li><a href="index.html#experience"  class="nav-link">Experience</a></li>
+          <li><a href="index.html#gallery"     class="nav-link">Gallery</a></li>
+          <li><a href="index.html#booking"     class="nav-link">Book a Table</a></li>
+          <li><a href="index.html#contact"     class="nav-link">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="dish-hero">
+    <div class="dish-hero-inner">
+      <div>
+        <a href="index.html#menu" class="dish-back-link">
+          <i class="fa-solid fa-arrow-left"></i> Back to Menu
+        </a>
+        <p class="dish-category-tag">Newari Classic &nbsp;·&nbsp; Cooking Class</p>
+        <h1 class="dish-hero-title">Chatamari</h1>
+        <p class="dish-hero-desc">A thin rice crepe topped with spiced minced meat, egg, and aromatic seasonings. Often called the Newari pizza, it has been a celebration dish in the Kathmandu Valley for centuries.</p>
+        <div class="dish-meta-row">
+          <div class="dish-meta-item">
+            <span class="meta-label">Prep Time</span>
+            <span class="meta-value">15 minutes</span>
+          </div>
+          <div class="dish-meta-item">
+            <span class="meta-label">Cook Time</span>
+            <span class="meta-value">10 minutes</span>
+          </div>
+          <div class="dish-meta-item">
+            <span class="meta-label">Serves</span>
+            <span class="meta-value">2 to 3 people</span>
+          </div>
+          <div class="dish-meta-item">
+            <span class="meta-label">Difficulty</span>
+            <span class="meta-value">Beginner Friendly</span>
+          </div>
+        </div>
+      </div>
+      <div class="dish-hero-img">
+        <i class="fa-solid fa-pizza-slice"></i>
+        <p>Chatamari</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO STRIP -->
+  <div class="dish-info-bar">
+    <div class="dish-info-bar-inner">
+      <div class="dish-info-card">
+        <i class="fa-solid fa-tag"></i>
+        <div>
+          <span class="ic-label">Class Price</span>
+          <span class="ic-value">$12 per person</span>
+        </div>
+      </div>
+      <div class="dish-info-card">
+        <i class="fa-solid fa-leaf"></i>
+        <div>
+          <span class="ic-label">Dietary</span>
+          <span class="ic-value">Gluten Free</span>
+        </div>
+      </div>
+      <div class="dish-info-card">
+        <i class="fa-solid fa-users"></i>
+        <div>
+          <span class="ic-label">Group Size</span>
+          <span class="ic-value">2 to 15 guests</span>
+        </div>
+      </div>
+      <div class="dish-info-card">
+        <i class="fa-solid fa-calendar-check"></i>
+        <div>
+          <span class="ic-label">Availability</span>
+          <span class="ic-value">Daily, 9 am to 9 pm</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STORY + WHAT YOU LEARN -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="dish-story-grid">
+
+        <div class="dish-story-text reveal">
+          <p class="section-eyebrow">The Story Behind the Dish</p>
+          <h2 class="section-heading">More Than Just a Crepe</h2>
+          <p>Chatamari has been part of Newari culture for as long as anyone can remember. It is prepared during festivals, offered at ceremonies, and served at family gatherings where food is meant to be shared slowly and with care.</p>
+          <p>The name comes from the Newari language, and the dish is so central to Newari identity that it is sometimes called the Newari pizza — a comparison that makes visitors smile and then immediately want to taste it for themselves.</p>
+          <p>What makes Chatamari special is its simplicity. Rice flour, water, a little mustard oil, and whatever the season offers on top. In our kitchen you will make it the way it has always been made — no shortcuts, no substitutions, just the real thing.</p>
+        </div>
+
+        <div class="dish-learn-box reveal">
+          <p class="section-eyebrow">In This Class</p>
+          <h2 class="section-heading">What You Will Learn</h2>
+          <div class="dish-learn-list">
+            <div class="dish-learn-item">
+              <div class="dish-learn-num">1</div>
+              <p>How to make a smooth rice flour batter and get the right consistency for a thin, even crepe</p>
+            </div>
+            <div class="dish-learn-item">
+              <div class="dish-learn-num">2</div>
+              <p>How to season minced meat the traditional Newari way using fresh ginger, garlic, turmeric, and timur</p>
+            </div>
+            <div class="dish-learn-item">
+              <div class="dish-learn-num">3</div>
+              <p>The technique for spreading a thin crepe on a flat pan without breaking it</p>
+            </div>
+            <div class="dish-learn-item">
+              <div class="dish-learn-num">4</div>
+              <p>How to layer the toppings and time the cook so the egg sets perfectly over the meat</p>
+            </div>
+            <div class="dish-learn-item">
+              <div class="dish-learn-num">5</div>
+              <p>How Chatamari is traditionally served and what it is paired with at Newari celebrations</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INGREDIENTS -->
+  <section class="section-padding dish-ingredients">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">What Goes Into It</p>
+        <h2 class="section-heading">Ingredients</h2>
+        <p class="section-desc">All ingredients are sourced fresh on the day of your session. Everything used is locally grown or traditionally prepared.</p>
+      </div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">2 cups</span>rice flour</span></div>
+        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">1.5 cups</span>water</span></div>
+        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">200g</span>minced buffalo or chicken</span></div>
+        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">2</span>eggs</span></div>
+        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">3 cloves</span>fresh garlic, minced</span></div>
+        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">1 inch</span>fresh ginger, grated</span></div>
+        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">½ tsp</span>turmeric powder</span></div>
+        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">½ tsp</span>cumin powder</span></div>
+        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">¼ tsp</span>timur (Sichuan pepper)</span></div>
+        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">2 tbsp</span>mustard oil</span></div>
+        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">to taste</span>salt</span></div>
+        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">handful</span>fresh coriander leaves</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section class="section-padding dish-steps">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">The Process</p>
+        <h2 class="section-heading">How to Make Chatamari</h2>
+        <p class="section-desc">These are the steps you will follow during the class, guided the whole way through.</p>
+      </div>
+      <div class="steps-list">
+        <div class="step-item reveal">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <strong>Make the batter</strong>
+            <p>Mix rice flour with water gradually, stirring until completely smooth with no lumps. The batter should be thin enough to pour and spread easily. Add a pinch of salt, stir, and set aside to rest for five minutes.</p>
+          </div>
+        </div>
+        <div class="step-item reveal">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <strong>Season the meat</strong>
+            <p>Combine the minced meat with garlic, ginger, turmeric, cumin, timur, and salt. Mix well until everything is evenly incorporated. This is where the real Newari flavour comes in — do not rush it.</p>
+          </div>
+        </div>
+        <div class="step-item reveal">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <strong>Heat the pan</strong>
+            <p>Place a flat, heavy-bottomed pan on medium-low heat. Brush the surface lightly with mustard oil. The oil should shimmer but not smoke — getting the temperature right is the key to a good Chatamari.</p>
+          </div>
+        </div>
+        <div class="step-item reveal">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <strong>Pour and spread the batter</strong>
+            <p>Pour a small ladle of batter onto the centre of the pan and spread it into a thin circle using the back of the ladle. Work quickly and with confidence. Cook on low heat until the edges begin to lift and the surface looks dry.</p>
+          </div>
+        </div>
+        <div class="step-item reveal">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <strong>Add the toppings</strong>
+            <p>Spread a thin, even layer of seasoned meat across the surface of the crepe. Make a small well in the centre and crack an egg into it. The egg will cook gently on top of the meat without needing to flip the Chatamari.</p>
+          </div>
+        </div>
+        <div class="step-item reveal">
+          <div class="step-num">6</div>
+          <div class="step-body">
+            <strong>Cover and finish</strong>
+            <p>Place a lid over the pan and cook on low heat until the egg white is fully set but the yolk is still slightly soft. This takes around three to four minutes. The base should be golden and just starting to crisp.</p>
+          </div>
+        </div>
+        <div class="step-item reveal">
+          <div class="step-num">7</div>
+          <div class="step-body">
+            <strong>Garnish and serve</strong>
+            <p>Scatter fresh coriander over the top and serve directly from the pan. Chatamari is best eaten immediately while the base is still crisp. Slide it onto a plate, sit down together, and eat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="dish-cta">
+    <div class="dish-cta-inner">
+      <p class="section-eyebrow">Join the Class</p>
+      <h2 class="section-heading">Cook Chatamari with Us</h2>
+      <p>Come into our kitchen, roll up your sleeves, and make this dish yourself from scratch. By the end you will sit down and eat everything you cooked — together.</p>
+      <p class="dish-cta-price">$12 per person &nbsp;·&nbsp; All ingredients included</p><br />
+      <a href="index.html#booking" class="btn-hero-primary">Book This Class</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo-row">
+            <span class="logo-symbol footer-logo-sym">&#x2638;</span>
+            <span class="footer-brand-name">Yana Kitchen</span>
+          </div>
+          <p class="footer-tagline">Where every meal is a memory of Nepal.</p>
+          <p class="footer-address">Panauti-Namobuddha Rd, Panauti 45409<br />Kavre, Nepal</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/rasna.shrestha?igsh=bnJoajZkbnJ4NW5j" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/9779860343404" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="mailto:strasna11@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Dishes</h4>
+          <ul>
+            <li><a href="chatamari.html">Chatamari</a></li>
+            <li><a href="index.html#menu">Dal Bhat Tarkari</a></li>
+            <li><a href="index.html#menu">Momo with Achar</a></li>
+            <li><a href="index.html#menu">View All Dishes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Discover</h4>
+          <ul>
+            <li><a href="index.html#story">Our Story</a></li>
+            <li><a href="index.html#menu">The Menu</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="index.html#booking">Reservations</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <p>+977 986-0343404</p>
+          <p style="margin-top:.5rem;">strasna11@gmail.com</p>
+          <p style="margin-top:.75rem;">Open daily<br />9 am to 9 pm</p>
+        </div>
+      </div>
+      <div class="footer-divider" aria-hidden="true"></div>
+      <div class="footer-bottom">
+        <p class="footer-pattern-text" aria-hidden="true">&#x2638; &#x2665; &#x2638; &#x2665; &#x2638; &#x2665; &#x2638;</p>
+        <p>&copy; 2026 Yana Kitchen. All Rights Reserved. Made with love in Panauti, Nepal.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header   = document.getElementById('header');
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('nav-links');
+
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    hamburger.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open);
+    });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const ro = new IntersectionObserver(entries => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          ro.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => ro.observe(el));
+  </script>
+</body>
+</html>

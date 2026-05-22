@@ -454,6 +454,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: rgba(196,113,79,.1); color: var(--terracotta);
 }
 
+.menu-card-link {
+  display: inline-flex; align-items: center; gap: .4rem;
+  margin-top: 1rem; font-size: .78rem; font-weight: 700;
+  letter-spacing: .04em; color: var(--maroon);
+  font-family: var(--font-heading); text-transform: uppercase;
+  transition: gap var(--transition), color var(--transition);
+}
+.menu-card-link:hover { gap: .65rem; color: var(--terracotta); }
+.menu-card-link i { font-size: .65rem; }
+
 .menu-card-meta {
   display: flex; align-items: center; flex-wrap: nowrap;
   gap: 0; margin-top: .85rem; padding-top: .75rem;
