@@ -3,7 +3,7 @@ backend:
   repo: strasna11-droid/Yana-Kitchen
   branch: main
   base_url: https://api.netlify.com
-  site_domain: glittery-cat-45d048.netlify.app
+  site_domain: rasnashrestha.com.np
 
 media_folder: "images/uploads"
 
