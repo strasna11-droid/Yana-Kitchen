@@ -17,9 +17,9 @@
   --text-mid:    #5C3D2A;
   --text-light:  #9E7A5A;
 
-  --font-heading: 'Comfortaa', 'Nunito', system-ui, sans-serif;
-  --font-accent:  'Cormorant Garamond', Georgia, serif;
-  --font-body:    'Lato', system-ui, sans-serif;
+  --font-heading: 'Poppins', system-ui, sans-serif;
+  --font-accent:  'Poppins', system-ui, sans-serif;
+  --font-body:    'Rubik', system-ui, sans-serif;
 
   --radius-sm: 8px;
   --radius-md: 14px;
@@ -186,7 +186,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-family: var(--font-heading); font-size: clamp(1.85rem, 4vw, 2.75rem);
   font-weight: 700; color: var(--maroon); line-height: 1.25; margin-bottom: 1rem;
 }
-.section-heading em { font-style: italic; color: var(--brown); font-family: var(--font-accent); }
+.section-heading em { font-style: normal; color: var(--brown); font-family: var(--font-heading); font-weight: 700; }
 .section-desc { max-width: 540px; color: var(--text-mid); font-size: 1.025rem; }
 .section-header { text-align: center; margin-bottom: 3.5rem; }
 .section-header .section-desc { margin: 0 auto; }
@@ -200,20 +200,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   min-height: 100vh;
   display: flex; align-items: center;
   position: relative; overflow: hidden;
-  background: linear-gradient(145deg, #2D0A13 0%, #5C1621 40%, #7A2E1A 72%, #9E4520 100%);
+  background: linear-gradient(135deg, #4A0F0F 0%, #6B1F1F 45%, #7A2020 75%, #561520 100%);
 }
 
 .hero-bg-pattern {
   position: absolute; inset: 0;
   background-image:
-    radial-gradient(ellipse at 78% 42%, rgba(220,155,25,.22) 0%, transparent 42%),
-    radial-gradient(ellipse at 10% 80%, rgba(196,113,79,.2) 0%, transparent 40%),
-    radial-gradient(ellipse at 92% 8%,  rgba(40,8,16,.7) 0%, transparent 35%),
-    repeating-linear-gradient(
-      -45deg,
-      transparent 0px, transparent 20px,
-      rgba(255,255,255,.014) 20px, rgba(255,255,255,.014) 21px
-    );
+    radial-gradient(ellipse at 75% 45%, rgba(196,113,79,.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 10% 85%, rgba(122,30,46,.3) 0%, transparent 40%),
+    radial-gradient(ellipse at 92% 8%,  rgba(50,10,10,.5) 0%, transparent 38%);
 }
 .hero-overlay {
   position: absolute; inset: 0;
@@ -233,16 +228,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   bottom: -60px; left: -60px;
   background: radial-gradient(circle, rgba(196,113,79,.12) 0%, transparent 65%);
 }
-.hero-bottom-stripe {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 6px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--terracotta) 0px, var(--terracotta) 14px,
-    var(--wood-light) 14px, var(--wood-light) 28px,
-    rgba(220,155,25,.9) 28px, rgba(220,155,25,.9) 42px,
-    var(--beige-mid)  42px, var(--beige-mid)  56px
-  );
-}
+.hero-bottom-stripe { display: none; }
 
 .hero-inner {
   position: relative; z-index: 1;
@@ -283,10 +269,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin-bottom: 1.5rem;
 }
 .hero-title em {
-  display: block; font-style: italic; font-weight: 700;
+  display: block; font-style: normal; font-weight: 700;
   color: rgba(220,175,60,1);
-  font-family: var(--font-accent);
-  font-size: 1.05em;
+  font-family: var(--font-heading);
+  font-size: 1em;
   text-shadow: 0 2px 12px rgba(220,155,25,.35);
 }
 
@@ -499,6 +485,37 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: rgba(196,113,79,.1); color: var(--terracotta);
 }
 
+.menu-card-meta {
+  display: flex; flex-wrap: wrap; gap: .6rem;
+  margin-top: .85rem; padding-top: .75rem;
+  border-top: 1px solid var(--beige-mid);
+}
+.menu-card-meta span {
+  display: inline-flex; align-items: center; gap: .3rem;
+  font-size: .72rem; color: var(--text-light); font-family: var(--font-body);
+}
+.menu-card-meta i { font-size: .65rem; color: var(--terracotta); }
+
+/* ---------- What to Expect ---------- */
+.what-to-expect { background: var(--cream); }
+.wte-inner {
+  max-width: 760px; margin: 0 auto; text-align: center;
+}
+.wte-inner p { color: var(--text-mid); font-size: 1.05rem; margin-bottom: 1.1rem; line-height: 1.85; }
+.wte-inner p:last-child { margin-bottom: 0; }
+.wte-highlights {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem; margin-top: 3rem;
+}
+.wte-highlight {
+  background: var(--beige); border: 1px solid var(--beige-mid);
+  border-radius: var(--radius-md); padding: 1.5rem 1.25rem;
+  text-align: center; box-shadow: var(--shadow-sm);
+}
+.wte-highlight i { font-size: 1.5rem; color: var(--maroon); margin-bottom: .75rem; display: block; }
+.wte-highlight strong { display: block; font-family: var(--font-heading); font-size: .95rem; font-weight: 600; color: var(--maroon); margin-bottom: .35rem; }
+.wte-highlight p { font-size: .85rem; color: var(--text-mid); line-height: 1.6; margin: 0; }
+
 /* ---------- Experience ---------- */
 .exp-grid {
   display: grid;
@@ -603,8 +620,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .testi-stars { color: var(--terracotta); margin-bottom: 1rem; letter-spacing: .1em; }
 .testi-quote {
-  font-family: var(--font-accent); font-size: 1.15rem;
-  font-style: italic; color: var(--text-mid); line-height: 1.85; margin-bottom: 1.5rem;
+  font-family: var(--font-body); font-size: 1rem;
+  font-style: normal; color: var(--text-mid); line-height: 1.85; margin-bottom: 1.5rem;
 }
 .testi-author  { display: flex; align-items: center; justify-content: center; gap: .75rem; }
 .testi-avatar  { width: 40px; height: 40px; background: var(--brown); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--cream); font-size: .85rem; }
@@ -692,7 +709,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .footer-logo-sym { font-size: 1.4rem; color: var(--wood-light); }
 .footer-brand-name { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--cream); }
 
-.footer-tagline { font-family: var(--font-accent); font-style: italic; font-size: 1rem; color: var(--beige-mid); margin: .5rem 0 .75rem; opacity: .8; }
+.footer-tagline { font-family: var(--font-body); font-style: normal; font-size: .95rem; color: var(--beige-mid); margin: .5rem 0 .75rem; opacity: .8; }
 .footer-address { font-size: .85rem; color: var(--beige-mid); opacity: .65; line-height: 1.7; margin-bottom: 1.25rem; }
 
 .footer-socials { display: flex; gap: .6rem; }
