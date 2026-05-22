@@ -88,12 +88,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .logo { display: flex; align-items: center; }
-.logo-img {
-  height: 42px; width: auto; display: block;
-  border-radius: 6px;
-  transition: opacity var(--transition);
+.logo-symbol { display: none; }
+.logo-text {
+  font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700;
+  color: var(--cream); letter-spacing: .02em;
 }
-.logo:hover .logo-img { opacity: .85; }
+#header.scrolled .logo-text { color: var(--maroon); }
 
 .nav-links { display: flex; align-items: center; gap: .15rem; }
 .nav-link {
