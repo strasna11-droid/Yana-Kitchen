@@ -87,18 +87,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex; align-items: center; justify-content: space-between;
 }
 
-.logo { display: flex; align-items: center; gap: .5rem; }
-.logo-symbol {
-  font-size: 1.5rem; color: var(--wood-light); line-height: 1;
-  transition: transform .4s ease;
+.logo { display: flex; align-items: center; }
+.logo-img {
+  height: 42px; width: auto; display: block;
+  border-radius: 6px;
+  transition: opacity var(--transition);
 }
-.logo:hover .logo-symbol { transform: rotate(30deg); }
-.logo-text {
-  font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700;
-  color: var(--cream); letter-spacing: .02em;
-}
-#header.scrolled .logo-text  { color: var(--maroon); }
-#header.scrolled .logo-symbol { color: var(--maroon); }
+.logo:hover .logo-img { opacity: .85; }
 
 .nav-links { display: flex; align-items: center; gap: .15rem; }
 .nav-link {
