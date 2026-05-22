@@ -182,11 +182,39 @@
       color: rgba(220,175,60,.95); margin-bottom: 2rem;
     }
 
+    /* ── Photo Gallery ───────────────────────────── */
+    .dish-gallery-section { background: var(--beige); }
+    .dish-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .dish-photo-item {
+      aspect-ratio: 4/3;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .dish-photo-item:hover { transform: scale(1.02); box-shadow: var(--shadow-md); }
+    .dish-photo-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, var(--beige-mid) 0%, var(--wood) 100%);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: .6rem;
+      color: var(--cream);
+    }
+    .dish-photo-placeholder i    { font-size: 2rem; opacity: .5; }
+    .dish-photo-placeholder span { font-size: .8rem; font-weight: 600; opacity: .65; letter-spacing: .04em; }
+    /* When real photos are added */
+    .dish-photo-item img { width: 100%; height: 100%; object-fit: cover; }
+
     /* ── Responsive ──────────────────────────────── */
     @media (max-width: 900px) {
       .dish-hero-inner { grid-template-columns: 1fr; }
       .dish-hero-img   { display: none; }
-      .dish-story-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .dish-photo-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 480px) {
       .dish-hero { padding: 7rem 0 3.5rem; }
@@ -289,132 +317,32 @@
     </div>
   </div>
 
-  <!-- STORY + WHAT YOU LEARN -->
-  <section class="section-padding">
-    <div class="container">
-      <div class="dish-story-grid">
-
-        <div class="dish-story-text reveal">
-          <p class="section-eyebrow">The Story Behind the Dish</p>
-          <h2 class="section-heading">More Than Just a Crepe</h2>
-          <p>Chatamari has been part of Newari culture for as long as anyone can remember. It is prepared during festivals, offered at ceremonies, and served at family gatherings where food is meant to be shared slowly and with care.</p>
-          <p>The name comes from the Newari language, and the dish is so central to Newari identity that it is sometimes called the Newari pizza — a comparison that makes visitors smile and then immediately want to taste it for themselves.</p>
-          <p>What makes Chatamari special is its simplicity. Rice flour, water, a little mustard oil, and whatever the season offers on top. In our kitchen you will make it the way it has always been made — no shortcuts, no substitutions, just the real thing.</p>
-        </div>
-
-        <div class="dish-learn-box reveal">
-          <p class="section-eyebrow">In This Class</p>
-          <h2 class="section-heading">What You Will Learn</h2>
-          <div class="dish-learn-list">
-            <div class="dish-learn-item">
-              <div class="dish-learn-num">1</div>
-              <p>How to make a smooth rice flour batter and get the right consistency for a thin, even crepe</p>
-            </div>
-            <div class="dish-learn-item">
-              <div class="dish-learn-num">2</div>
-              <p>How to season minced meat the traditional Newari way using fresh ginger, garlic, turmeric, and timur</p>
-            </div>
-            <div class="dish-learn-item">
-              <div class="dish-learn-num">3</div>
-              <p>The technique for spreading a thin crepe on a flat pan without breaking it</p>
-            </div>
-            <div class="dish-learn-item">
-              <div class="dish-learn-num">4</div>
-              <p>How to layer the toppings and time the cook so the egg sets perfectly over the meat</p>
-            </div>
-            <div class="dish-learn-item">
-              <div class="dish-learn-num">5</div>
-              <p>How Chatamari is traditionally served and what it is paired with at Newari celebrations</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- INGREDIENTS -->
-  <section class="section-padding dish-ingredients">
+  <!-- PHOTO GALLERY -->
+  <section class="section-padding dish-gallery-section">
     <div class="container">
       <div class="section-header reveal">
-        <p class="section-eyebrow">What Goes Into It</p>
-        <h2 class="section-heading">Ingredients</h2>
-        <p class="section-desc">All ingredients are sourced fresh on the day of your session. Everything used is locally grown or traditionally prepared.</p>
+        <p class="section-eyebrow">The Dish</p>
+        <h2 class="section-heading">See What You'll Make</h2>
+        <p class="section-desc">Six photos of Chatamari — from raw ingredients to the finished plate.</p>
       </div>
-      <div class="ingredients-grid">
-        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">2 cups</span>rice flour</span></div>
-        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">1.5 cups</span>water</span></div>
-        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">200g</span>minced buffalo or chicken</span></div>
-        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">2</span>eggs</span></div>
-        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">3 cloves</span>fresh garlic, minced</span></div>
-        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">1 inch</span>fresh ginger, grated</span></div>
-        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">½ tsp</span>turmeric powder</span></div>
-        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">½ tsp</span>cumin powder</span></div>
-        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">¼ tsp</span>timur (Sichuan pepper)</span></div>
-        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">2 tbsp</span>mustard oil</span></div>
-        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">to taste</span>salt</span></div>
-        <div class="ingredient-item reveal"><i class="fa-solid fa-circle"></i><span><span class="ingredient-amount">handful</span>fresh coriander leaves</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STEPS -->
-  <section class="section-padding dish-steps">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-eyebrow">The Process</p>
-        <h2 class="section-heading">How to Make Chatamari</h2>
-        <p class="section-desc">These are the steps you will follow during the class, guided the whole way through.</p>
-      </div>
-      <div class="steps-list">
-        <div class="step-item reveal">
-          <div class="step-num">1</div>
-          <div class="step-body">
-            <strong>Make the batter</strong>
-            <p>Mix rice flour with water gradually, stirring until completely smooth with no lumps. The batter should be thin enough to pour and spread easily. Add a pinch of salt, stir, and set aside to rest for five minutes.</p>
-          </div>
+      <div class="dish-photo-grid">
+        <div class="dish-photo-item reveal">
+          <div class="dish-photo-placeholder"><i class="fa-solid fa-image"></i><span>Add photo 1</span></div>
         </div>
-        <div class="step-item reveal">
-          <div class="step-num">2</div>
-          <div class="step-body">
-            <strong>Season the meat</strong>
-            <p>Combine the minced meat with garlic, ginger, turmeric, cumin, timur, and salt. Mix well until everything is evenly incorporated. This is where the real Newari flavour comes in — do not rush it.</p>
-          </div>
+        <div class="dish-photo-item reveal">
+          <div class="dish-photo-placeholder"><i class="fa-solid fa-image"></i><span>Add photo 2</span></div>
         </div>
-        <div class="step-item reveal">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <strong>Heat the pan</strong>
-            <p>Place a flat, heavy-bottomed pan on medium-low heat. Brush the surface lightly with mustard oil. The oil should shimmer but not smoke — getting the temperature right is the key to a good Chatamari.</p>
-          </div>
+        <div class="dish-photo-item reveal">
+          <div class="dish-photo-placeholder"><i class="fa-solid fa-image"></i><span>Add photo 3</span></div>
         </div>
-        <div class="step-item reveal">
-          <div class="step-num">4</div>
-          <div class="step-body">
-            <strong>Pour and spread the batter</strong>
-            <p>Pour a small ladle of batter onto the centre of the pan and spread it into a thin circle using the back of the ladle. Work quickly and with confidence. Cook on low heat until the edges begin to lift and the surface looks dry.</p>
-          </div>
+        <div class="dish-photo-item reveal">
+          <div class="dish-photo-placeholder"><i class="fa-solid fa-image"></i><span>Add photo 4</span></div>
         </div>
-        <div class="step-item reveal">
-          <div class="step-num">5</div>
-          <div class="step-body">
-            <strong>Add the toppings</strong>
-            <p>Spread a thin, even layer of seasoned meat across the surface of the crepe. Make a small well in the centre and crack an egg into it. The egg will cook gently on top of the meat without needing to flip the Chatamari.</p>
-          </div>
+        <div class="dish-photo-item reveal">
+          <div class="dish-photo-placeholder"><i class="fa-solid fa-image"></i><span>Add photo 5</span></div>
         </div>
-        <div class="step-item reveal">
-          <div class="step-num">6</div>
-          <div class="step-body">
-            <strong>Cover and finish</strong>
-            <p>Place a lid over the pan and cook on low heat until the egg white is fully set but the yolk is still slightly soft. This takes around three to four minutes. The base should be golden and just starting to crisp.</p>
-          </div>
-        </div>
-        <div class="step-item reveal">
-          <div class="step-num">7</div>
-          <div class="step-body">
-            <strong>Garnish and serve</strong>
-            <p>Scatter fresh coriander over the top and serve directly from the pan. Chatamari is best eaten immediately while the base is still crisp. Slide it onto a plate, sit down together, and eat.</p>
-          </div>
+        <div class="dish-photo-item reveal">
+          <div class="dish-photo-placeholder"><i class="fa-solid fa-image"></i><span>Add photo 6</span></div>
         </div>
       </div>
     </div>
