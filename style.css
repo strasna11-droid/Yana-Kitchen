@@ -231,16 +231,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .hero-title {
   font-family: var(--font-heading); font-weight: 700;
-  font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+  font-size: clamp(1.9rem, 4vw, 3.2rem);
   color: var(--cream); line-height: 1.2;
   margin-bottom: 1.5rem;
   text-shadow: none;
 }
 .hero-title em {
-  display: block; font-style: normal; font-weight: 700;
+  display: block; font-style: normal; font-weight: 600;
   color: var(--cream);
   font-family: var(--font-heading);
-  font-size: .82em;
+  font-size: .68em;
   text-shadow: none;
 }
 
