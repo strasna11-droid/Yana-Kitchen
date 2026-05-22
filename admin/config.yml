@@ -1,7 +1,9 @@
 backend:
-  name: github
+  name: netlify-cms-backend
   repo: strasna11-droid/Yana-Kitchen
   branch: main
+  base_url: https://api.netlify.com
+  site_domain: glittery-cat-45d048.netlify.app
 
 media_folder: "images/uploads"
 
