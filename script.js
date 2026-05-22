@@ -169,13 +169,37 @@ if (bookingForm) {
     dateInput.setAttribute('min', today);
   }
 
-  bookingForm.addEventListener('submit', e => {
+  bookingForm.addEventListener('submit', async e => {
     e.preventDefault();
     if (!bookingForm.checkValidity()) {
       bookingForm.reportValidity();
       return;
     }
-    bookingForm.style.display = 'none';
-    formSuccess.hidden = false;
+
+    const submitBtn = bookingForm.querySelector('[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'Sending... <i class="fa-solid fa-spinner fa-spin"></i>';
+
+    try {
+      const response = await fetch('https://formspree.io/f/xojbwage', {
+        method: 'POST',
+        body: new FormData(bookingForm),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        bookingForm.style.display = 'none';
+        formSuccess.hidden = false;
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+        alert('Something went wrong. Please try again or reach us on WhatsApp.');
+      }
+    } catch {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalText;
+      alert('Something went wrong. Please try again or reach us on WhatsApp.');
+    }
   });
 }
