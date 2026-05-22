@@ -1,5 +1,5 @@
 backend:
-  name: netlify-cms-backend
+  name: github
   repo: strasna11-droid/Yana-Kitchen
   branch: main
   base_url: https://api.netlify.com
