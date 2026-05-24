@@ -182,7 +182,7 @@ if (bookingForm) {
     submitBtn.innerHTML = 'Sending... <i class="fa-solid fa-spinner fa-spin"></i>';
 
     try {
-      const response = await fetch('https://formspree.io/f/xojbwage', {
+      const response = await fetch('https://formspree.io/f/xbdbkney', {
         method: 'POST',
         body: new FormData(bookingForm),
         headers: { 'Accept': 'application/json' }
