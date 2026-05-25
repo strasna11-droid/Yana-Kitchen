@@ -695,7 +695,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .footer { background: var(--maroon-dark); color: var(--beige); padding-top: 4rem; }
 
 .footer-top {
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
   gap: 3rem; padding-bottom: 3rem;
 }
 
