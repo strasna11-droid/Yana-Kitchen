@@ -513,7 +513,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition), box-shadow var(--transition);
   position: relative;
+  display: flex; flex-direction: column;
 }
+.exp-card .btn-primary { margin-top: auto; }
 .exp-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
 
 .exp-card-featured {
