@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn to cook Buffalo Lung (Pangra) at Yana Kitchen in Panauti, Nepal. A hands-on Newari cooking class experience." />
+  <title>Buffalo Lung (Pangra) | Yana Kitchen</title>
+
+  <link rel="icon" type="image/x-icon" href="/yana_favicon_final/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/yana_favicon_final/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/yana_favicon_final/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/yana_favicon_final/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── Dish Hero ───────────────────────────────── */
+    .dish-hero { background: var(--maroon-dark); padding: 8rem 0 5rem; }
+    .dish-hero-inner {
+      max-width: 1180px; margin: 0 auto; padding: 0 1.5rem;
+      display: grid; grid-template-columns: 1fr 400px;
+      gap: 4rem; align-items: center;
+    }
+    .dish-back-link {
+      display: inline-flex; align-items: center; gap: .45rem;
+      font-size: .75rem; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; color: rgba(255,248,237,.55);
+      margin-bottom: 1.5rem; transition: color .25s ease;
+    }
+    .dish-back-link:hover { color: var(--cream); }
+    .dish-back-link i { font-size: .65rem; }
+    .dish-category-tag {
+      display: inline-block; font-size: .72rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: rgba(220,175,60,.9); margin-bottom: .65rem;
+    }
+    .dish-hero-title {
+      font-family: var(--font-heading); font-weight: 700;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      color: var(--cream); line-height: 1.05; margin-bottom: 1rem;
+    }
+    .dish-hero-desc {
+      font-size: 1.05rem; color: rgba(245,236,215,.82);
+      max-width: 460px; line-height: 1.8; margin-bottom: 2rem;
+    }
+    .dish-meta-row { display: flex; flex-wrap: wrap; gap: 2rem; }
+    .dish-meta-item { display: flex; flex-direction: column; gap: .2rem; }
+    .dish-meta-item .meta-label {
+      font-size: .65rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: rgba(220,175,60,.65);
+    }
+    .dish-meta-item .meta-value {
+      font-size: .92rem; color: var(--cream); font-weight: 500;
+      font-family: var(--font-heading);
+    }
+    .dish-hero-img {
+      width: 100%; aspect-ratio: 1/1;
+      background: linear-gradient(155deg, #5C2A18 0%, #8B3A1A 50%, #6B4226 100%);
+      border-radius: var(--radius-lg); border: 3px solid rgba(220,175,60,.25);
+      box-shadow: 0 24px 60px rgba(0,0,0,.4);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: .75rem;
+    }
+    .dish-hero-img i { font-size: 5rem; color: var(--cream); opacity: .2; }
+    .dish-hero-img p { font-family: var(--font-heading); color: var(--cream); opacity: .4; font-size: .9rem; letter-spacing: .06em; }
+
+    /* ── Class Details Section ───────────────────── */
+    .class-details-section { background: var(--cream); }
+    .class-highlights-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 1.25rem; margin-top: 2.5rem; margin-bottom: 4rem;
+    }
+    .class-highlight {
+      background: var(--beige); border: 1px solid var(--beige-mid);
+      border-radius: var(--radius-md); padding: 1.5rem 1.25rem; box-shadow: var(--shadow-sm);
+    }
+    .class-hl-icon {
+      width: 42px; height: 42px; background: rgba(122,30,46,.09);
+      border-radius: var(--radius-sm); display: flex; align-items: center;
+      justify-content: center; font-size: 1rem; color: var(--maroon); margin-bottom: 1rem;
+    }
+    .class-highlight h4 { font-family: var(--font-heading); font-size: .95rem; font-weight: 600; color: var(--maroon); margin-bottom: .4rem; }
+    .class-highlight p  { font-size: .85rem; color: var(--text-mid); line-height: 1.65; margin: 0; }
+    .class-bottom-grid  { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .class-subheading   { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--maroon); margin-bottom: 1.5rem; }
+    .class-learn-table  { display: flex; flex-direction: column; gap: .9rem; margin-top: 1.25rem; }
+    .clt-row { display: grid; grid-template-columns: 32px 150px 1fr; gap: .6rem 1rem; align-items: start; }
+    .clt-num {
+      width: 30px; height: 30px; background: var(--maroon); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-heading); font-size: .72rem; font-weight: 700;
+      color: var(--cream); flex-shrink: 0; margin-top: .1rem;
+    }
+    .clt-title { font-family: var(--font-heading); font-size: .88rem; font-weight: 600; color: var(--maroon); padding-top: .3rem; line-height: 1.4; }
+    .clt-desc  { font-size: .875rem; color: var(--text-mid); line-height: 1.6; padding-top: .3rem; }
+    .class-info-box { background: var(--maroon); border-radius: var(--radius-lg); padding: 2.25rem; }
+    .class-info-list { list-style: none; display: flex; flex-direction: column; gap: 1.1rem; margin-bottom: 2rem; }
+    .class-info-list li { display: flex; align-items: flex-start; gap: .9rem; }
+    .class-info-list li i      { font-size: .95rem; color: rgba(220,175,60,.8); margin-top: .2rem; flex-shrink: 0; }
+    .class-info-list li div    { display: flex; flex-direction: column; gap: .15rem; }
+    .class-info-list li strong { font-family: var(--font-heading); font-size: .85rem; font-weight: 600; color: var(--cream); }
+    .class-info-list li span   { font-size: .82rem; color: rgba(245,236,215,.75); line-height: 1.5; }
+    .class-price-tag { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: rgba(220,175,60,.95); border-top: 1px solid rgba(255,255,255,.12); padding-top: 1.25rem; }
+    .class-price-tag span { font-size: 1rem; font-weight: 400; color: rgba(245,236,215,.7); margin-left: .3rem; }
+
+    /* ── Photo Gallery ───────────────────────────── */
+    .dish-gallery-section { background: var(--beige); }
+    .dish-photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem; }
+    .dish-photo-item { aspect-ratio: 4/3; border-radius: var(--radius-md); overflow: hidden; cursor: pointer; transition: transform .3s ease, box-shadow .3s ease; }
+    .dish-photo-item:hover { transform: scale(1.02); box-shadow: var(--shadow-md); }
+    .dish-photo-placeholder { width: 100%; height: 100%; background: linear-gradient(135deg, var(--beige-mid) 0%, var(--wood) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .6rem; color: var(--cream); }
+    .dish-photo-placeholder i    { font-size: 2rem; opacity: .5; }
+    .dish-photo-placeholder span { font-size: .8rem; font-weight: 600; opacity: .65; letter-spacing: .04em; }
+    .dish-photo-item img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ── CTA ─────────────────────────────────────── */
+    .dish-cta { background: var(--maroon-dark); padding: 5.5rem 0; text-align: center; }
+    .dish-cta-inner { max-width: 600px; margin: 0 auto; padding: 0 1.5rem; }
+    .dish-cta .section-eyebrow { color: rgba(220,175,60,.8); }
+    .dish-cta .section-heading { color: var(--cream); }
+    .dish-cta p { color: rgba(245,236,215,.8); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; }
+    .dish-cta-price { display: inline-block; font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: rgba(220,175,60,.95); margin-bottom: 2rem; }
+
+    /* ── Responsive ──────────────────────────────── */
+    @media (max-width: 900px) {
+      .dish-hero-inner   { grid-template-columns: 1fr; }
+      .dish-hero-img     { display: none; }
+      .dish-photo-grid   { grid-template-columns: repeat(2, 1fr); }
+      .class-bottom-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (max-width: 480px) {
+      .dish-hero { padding: 7rem 0 3.5rem; }
+      .dish-meta-row { gap: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Yana Kitchen Home">
+        <img src="/yanalog.png" alt="Yana Kitchen" class="logo-img" />
+      </a>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html"            class="nav-link">Home</a></li>
+          <li><a href="index.html#story"      class="nav-link">Our Story</a></li>
+          <li><a href="index.html#menu"       class="nav-link">Menu</a></li>
+          <li><a href="index.html#experience" class="nav-link">Experience</a></li>
+          <li><a href="index.html#gallery"    class="nav-link">Gallery</a></li>
+          <li><a href="index.html#booking"    class="nav-link">Book a Table</a></li>
+          <li><a href="index.html#contact"    class="nav-link">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="dish-hero">
+    <div class="dish-hero-inner">
+      <div>
+        <a href="index.html#menu" class="dish-back-link">
+          <i class="fa-solid fa-arrow-left"></i> Back to Menu
+        </a>
+        <p class="dish-category-tag">Small Plate &nbsp;·&nbsp; Newari Snack</p>
+        <h1 class="dish-hero-title">Buffalo Lung (Pangra)</h1>
+        <p class="dish-hero-desc">Fried crispy and seasoned with Newari spices, pangra is the kind of snack that divides the room — and then unites it. Bold, chewy, and packed with flavor. Not for the faint hearted, but loved by everyone who takes the first bite.</p>
+        <div class="dish-meta-row">
+          <div class="dish-meta-item">
+            <span class="meta-label">Prep Time</span>
+            <span class="meta-value">20 minutes</span>
+          </div>
+          <div class="dish-meta-item">
+            <span class="meta-label">Cook Time</span>
+            <span class="meta-value">25 minutes</span>
+          </div>
+          <div class="dish-meta-item">
+            <span class="meta-label">Serves</span>
+            <span class="meta-value">1 to 2 people</span>
+          </div>
+          <div class="dish-meta-item">
+            <span class="meta-label">Difficulty</span>
+            <span class="meta-value">Beginner Friendly</span>
+          </div>
+        </div>
+      </div>
+      <div class="dish-hero-img">
+        <i class="fa-solid fa-drumstick-bite"></i>
+        <p>Buffalo Lung (Pangra)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLASS DETAILS -->
+  <section class="class-details-section section-padding">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <p class="section-eyebrow">What's Included</p>
+        <h2 class="section-heading">Class Highlights</h2>
+      </div>
+
+      <div class="class-highlights-grid">
+        <div class="class-highlight reveal">
+          <div class="class-hl-icon"><i class="fa-solid fa-scissors"></i></div>
+          <h4>The Cut</h4>
+          <p>Learn how to properly prepare buffalo lung for cooking.</p>
+        </div>
+        <div class="class-highlight reveal">
+          <div class="class-hl-icon"><i class="fa-solid fa-mortar-pestle"></i></div>
+          <h4>Newari Spice Mix</h4>
+          <p>The dry blend of local spices that gives pangra its heat and depth.</p>
+        </div>
+        <div class="class-highlight reveal">
+          <div class="class-hl-icon"><i class="fa-solid fa-fire-burner"></i></div>
+          <h4>Frying Technique</h4>
+          <p>Get the oil temperature right for maximum crispiness throughout.</p>
+        </div>
+        <div class="class-highlight reveal">
+          <div class="class-hl-icon"><i class="fa-solid fa-star"></i></div>
+          <h4>Bold and Local</h4>
+          <p>Understand why pangra is a staple at Newari celebrations and gatherings.</p>
+        </div>
+        <div class="class-highlight reveal">
+          <div class="class-hl-icon"><i class="fa-solid fa-mug-hot"></i></div>
+          <h4>Eat It Hot</h4>
+          <p>Best enjoyed straight from the pan with a cold glass of aila.</p>
+        </div>
+      </div>
+
+      <div class="class-bottom-grid">
+
+        <div class="class-learn-wrap reveal">
+          <p class="section-eyebrow">Step by Step</p>
+          <h3 class="class-subheading">What You Will Learn</h3>
+          <div class="class-learn-table">
+            <div class="clt-row">
+              <span class="clt-num">1</span>
+              <strong class="clt-title">Preparing the Lung</strong>
+              <span class="clt-desc">Clean and slice the buffalo lung correctly before cooking.</span>
+            </div>
+            <div class="clt-row">
+              <span class="clt-num">2</span>
+              <strong class="clt-title">The Spice Blend</strong>
+              <span class="clt-desc">Mix the dry spices that give pangra its signature Newari heat.</span>
+            </div>
+            <div class="clt-row">
+              <span class="clt-num">3</span>
+              <strong class="clt-title">Marinating</strong>
+              <span class="clt-desc">Coat the meat and allow the spices to penetrate fully.</span>
+            </div>
+            <div class="clt-row">
+              <span class="clt-num">4</span>
+              <strong class="clt-title">Deep Frying</strong>
+              <span class="clt-desc">Fry in batches until each piece is golden and crispy on all sides.</span>
+            </div>
+            <div class="clt-row">
+              <span class="clt-num">5</span>
+              <strong class="clt-title">Serving Like a Local</strong>
+              <span class="clt-desc">Learn how pangra is traditionally served at a Newari feast.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="class-info-box reveal">
+          <p class="section-eyebrow" style="color:rgba(220,175,60,.8);">Class Details</p>
+          <h3 class="class-subheading" style="color:var(--cream);">Everything You Need to Know</h3>
+          <ul class="class-info-list">
+            <li><i class="fa-solid fa-clock"></i><div><strong>Duration</strong><span>Approximately 1 hour</span></div></li>
+            <li><i class="fa-solid fa-signal"></i><div><strong>Skill Level</strong><span>Beginner friendly, no experience needed</span></div></li>
+            <li><i class="fa-solid fa-language"></i><div><strong>Language</strong><span>Classes taught in English</span></div></li>
+            <li><i class="fa-solid fa-circle-check"></i><div><strong>Included</strong><span>All ingredients, recipe card to take home, shared meal, Nepali tea</span></div></li>
+          </ul>
+          <div class="class-price-tag">$7 <span>per person</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY -->
+  <section class="section-padding dish-gallery-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">The Dish</p>
+        <h2 class="section-heading">See What You'll Make</h2>
+      </div>
+      <div class="dish-photo-grid">
+        <div class="dish-photo-item reveal"><div class="dish-photo-placeholder"><i class="fa-solid fa-image"></i><span>Photo 1</span></div></div>
+        <div class="dish-photo-item reveal"><div class="dish-photo-placeholder"><i class="fa-solid fa-image"></i><span>Photo 2</span></div></div>
+        <div class="dish-photo-item reveal"><div class="dish-photo-placeholder"><i class="fa-solid fa-image"></i><span>Photo 3</span></div></div>
+        <div class="dish-photo-item reveal"><div class="dish-photo-placeholder"><i class="fa-solid fa-image"></i><span>Photo 4</span></div></div>
+        <div class="dish-photo-item reveal"><div class="dish-photo-placeholder"><i class="fa-solid fa-image"></i><span>Photo 5</span></div></div>
+        <div class="dish-photo-item reveal"><div class="dish-photo-placeholder"><i class="fa-solid fa-image"></i><span>Photo 6</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="dish-cta">
+    <div class="dish-cta-inner">
+      <p class="section-eyebrow">Join the Class</p>
+      <h2 class="section-heading">Try Something Bold</h2>
+      <p>Pangra is not on the usual tourist list. But it is on ours. Come try it fresh from the pan and understand why Newari people have loved it for generations.</p>
+      <p class="dish-cta-price">$7 per person &nbsp;·&nbsp; All ingredients included</p><br />
+      <a href="index.html#booking" class="btn-hero-primary">Book This Class</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo-row">
+            <span class="logo-symbol footer-logo-sym">&#x2638;</span>
+            <span class="footer-brand-name">Yana Kitchen</span>
+          </div>
+          <p class="footer-tagline">Where every meal is a memory of Nepal.</p>
+          <p class="footer-address">Panauti-Namobuddha Rd, Panauti 45409<br />Kavre, Nepal</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/yana.kitchen.np?igsh=MXZxbHlpbHNsZnFzdw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/9779860343404" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="mailto:info.yanakitchen@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Dishes</h4>
+          <ul>
+            <li><a href="chatamari.html">Chatamari</a></li>
+            <li><a href="the-full-feast.html">The Full Feast</a></li>
+            <li><a href="the-home-table.html">The Home Table</a></li>
+            <li><a href="street-and-soul.html">Street and Soul</a></li>
+            <li><a href="from-the-fields.html">From The Fields</a></li>
+            <li><a href="buffalo-lung.html">Buffalo Lung</a></li>
+            <li><a href="crispy-tripe.html">Crispy Tripe</a></li>
+            <li><a href="grain-porridge.html">Grain Porridge</a></li>
+            <li><a href="spiced-grill.html">Spiced Grill</a></li>
+            <li><a href="spiced-soybeans.html">Bhatmas Sadeko</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Discover</h4>
+          <ul>
+            <li><a href="index.html#story">Our Story</a></li>
+            <li><a href="index.html#menu">The Menu</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="index.html#booking">Reservations</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <p>+977 986-0343404</p>
+          <p style="margin-top:.5rem;">info.yanakitchen@gmail.com</p>
+          <p style="margin-top:.75rem;">Open daily<br />9 am to 6 pm</p>
+        </div>
+      </div>
+      <div class="footer-divider" aria-hidden="true"></div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Yana Kitchen. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header    = document.getElementById('header');
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('nav-links');
+    window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 50); });
+    hamburger.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open);
+    });
+    const reveals = document.querySelectorAll('.reveal');
+    const ro = new IntersectionObserver(entries => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          ro.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => ro.observe(el));
+  </script>
+</body>
+</html>
