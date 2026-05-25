@@ -420,7 +420,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .menu-card-img {
   position: relative;
   background: linear-gradient(135deg, var(--beige) 0%, var(--beige-mid) 100%);
-  height: 160px;
+  height: 190px;
   display: flex; align-items: center; justify-content: center;
 }
 .menu-img-placeholder { font-size: 2.5rem; color: var(--terracotta); opacity: .45; }
